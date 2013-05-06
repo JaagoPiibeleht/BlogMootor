@@ -1,0 +1,22 @@
+﻿@using BlogMootor.Models;
+@model IEnumerable<Postitused>
+@{
+    ViewBag.Title = "Pealeht";
+    bool isPreviousLinkVisible = ViewBag.IsPreviousLinkVisible ?? false;
+    bool isNextLinkVisible = ViewBag.IsNextLinkVisible ?? false;
+}
+@foreach (Postitused post in Model)
+{
+    @PostHelper.Render(post, Html);
+}
+
+@if (isPreviousLinkVisible)
+{
+    <a id="previousLink" href="@Href("~/Postitused/Index/" + (ViewBag.LeheNumber - 1))">&lt; Previous Page</a>    
+}
+
+@if (isNextLinkVisible)
+{
+    <a id="nextLink" href="@Href("~/Postitused/Index/" + (ViewBag.LeheNumber + 1))">Next Page &gt;</a>
+}   
+ 
