@@ -1,0 +1,19 @@
+﻿@model BlogMootor.Models.Administraator
+
+@{
+    ViewBag.Title = "Login";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.KasutajaNimi)
+    @Html.TextBoxFor(m => m.KasutajaNimi)
+    @Html.LabelFor(m => m.Parool)
+    @Html.PasswordFor(m => m.Parool)
+    <input type="submit" />
+    @Html.ValidationSummary()
+ 
+}

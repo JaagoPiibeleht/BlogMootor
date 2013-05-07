@@ -1,0 +1,9 @@
+﻿@model BlogMootor.Models.Postitused
+
+@{
+    ViewBag.Title = "Postitus";
+}
+
+@PostHelper.Render(Model,Html)
+
+<br /><br /><a href="@Href("~/postitused/index")">Tagasi</a>

@@ -1,0 +1,10 @@
+﻿@using BlogMootor.Models;
+
+@helper Render(Postitused post, System.Web.Mvc.HtmlHelper html)
+{
+    <div class="kogum">
+    <div class="pealkiri"><a href="@Href("~/Postitused/Details/"+ post.ID )">@post.Pealkiri</a></div>
+    <div class="kuupaev">@post.Kuupaev.ToString("dd").@post.Kuupaev.ToString("MMM").ToUpper()</div>
+    <div class="sisu">@html.Raw(post.Sisu)</div>
+    </div>
+}
